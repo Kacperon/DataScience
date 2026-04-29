@@ -1,0 +1,88 @@
+{
+  "description": "Stress test for vulgar nick detection. Nicks crafted to probe specific failure modes NOT covered by the regular custom set: long obfuscations, repetition, Polish diacritics, censored forms, surnames-as-traps, slang derivatives, mixed-language compounds, reversed text. All ≤32 chars (typical username limit).",
+  "label_meaning": {"1": "vulgar", "0": "clean"},
+  "samples": [
+    {"nick": "kuuuuurwaaaaa", "label": 1, "category": "repeated_chars"},
+    {"nick": "kkkurwa", "label": 1, "category": "repeated_chars"},
+    {"nick": "chuuuuj", "label": 1, "category": "repeated_chars"},
+    {"nick": "ciiiiipa", "label": 1, "category": "repeated_chars"},
+    {"nick": "pierdoooooolec", "label": 1, "category": "repeated_chars"},
+
+    {"nick": "kurwą", "label": 1, "category": "polish_diacritics"},
+    {"nick": "chujów", "label": 1, "category": "polish_diacritics"},
+    {"nick": "pierdolę", "label": 1, "category": "polish_diacritics"},
+    {"nick": "jebać", "label": 1, "category": "polish_diacritics"},
+    {"nick": "skurwiały", "label": 1, "category": "polish_diacritics"},
+
+    {"nick": "k***wa", "label": 1, "category": "censored"},
+    {"nick": "ch*j", "label": 1, "category": "censored"},
+    {"nick": "p1erdolec", "label": 1, "category": "censored"},
+    {"nick": "j3b@ny", "label": 1, "category": "censored"},
+    {"nick": "f**k_master", "label": 1, "category": "censored"},
+
+    {"nick": "KuRwA_MaStEr", "label": 1, "category": "mixed_case_extreme"},
+    {"nick": "ChUjEk2003", "label": 1, "category": "mixed_case_extreme"},
+    {"nick": "PiErD0lEc", "label": 1, "category": "mixed_case_extreme"},
+
+    {"nick": "awruk", "label": 1, "category": "reversed_text"},
+    {"nick": "juhc", "label": 1, "category": "reversed_text"},
+    {"nick": "celodreip", "label": 1, "category": "reversed_text"},
+
+    {"nick": "kurwajeb", "label": 1, "category": "compound_vulgar"},
+    {"nick": "chujpierdol", "label": 1, "category": "compound_vulgar"},
+    {"nick": "kurwa_chuj_jeb", "label": 1, "category": "compound_vulgar"},
+    {"nick": "fucking_kurwa", "label": 1, "category": "mixed_lang_vulgar"},
+    {"nick": "shit_chuj", "label": 1, "category": "mixed_lang_vulgar"},
+    {"nick": "asshole_kurwa", "label": 1, "category": "mixed_lang_vulgar"},
+
+    {"nick": "kurwakurwakurwakurwakurwakurwakur", "label": 1, "category": "extreme_length_vulgar"},
+    {"nick": "x_pierdolony_skurwiel_69_69_69x", "label": 1, "category": "extreme_length_vulgar"},
+
+    {"nick": "kurpiewski", "label": 0, "category": "surname_trap"},
+    {"nick": "kurpiewska", "label": 0, "category": "surname_trap"},
+    {"nick": "kurkowski", "label": 0, "category": "surname_trap"},
+    {"nick": "kuracja_2024", "label": 0, "category": "surname_trap"},
+    {"nick": "kurnik_pana_jana", "label": 0, "category": "surname_trap"},
+
+    {"nick": "wkurzony", "label": 0, "category": "slang_derivative"},
+    {"nick": "kurort_wakacje", "label": 0, "category": "slang_derivative"},
+    {"nick": "kurator_szkolny", "label": 0, "category": "slang_derivative"},
+    {"nick": "pieczarka_pl", "label": 0, "category": "slang_derivative"},
+    {"nick": "pieprzowy_kot", "label": 0, "category": "slang_derivative"},
+
+    {"nick": "ku", "label": 0, "category": "extreme_short"},
+    {"nick": "xd", "label": 0, "category": "extreme_short"},
+    {"nick": "pl", "label": 0, "category": "extreme_short"},
+    {"nick": "ja", "label": 0, "category": "extreme_short"},
+    {"nick": "ok", "label": 0, "category": "extreme_short"},
+
+    {"nick": "42069", "label": 0, "category": "numbers_only"},
+    {"nick": "1234567890", "label": 0, "category": "numbers_only"},
+    {"nick": "00000000", "label": 0, "category": "numbers_only"},
+
+    {"nick": "abcdefghijklmnopqrstuvwxyz_2024", "label": 0, "category": "extreme_length_clean"},
+    {"nick": "the_legendary_dragon_warrior_pl", "label": 0, "category": "extreme_length_clean"},
+    {"nick": "krzysztof_jan_kowalski_1985", "label": 0, "category": "extreme_length_clean"},
+
+    {"nick": "scunthorpe", "label": 0, "category": "en_surname_trap"},
+    {"nick": "cocktail_lover", "label": 0, "category": "en_surname_trap"},
+    {"nick": "analytical_mind", "label": 0, "category": "en_surname_trap"},
+    {"nick": "classic_rock_fan", "label": 0, "category": "en_surname_trap"},
+    {"nick": "assassins_creed", "label": 0, "category": "en_surname_trap"},
+    {"nick": "bassoon_player", "label": 0, "category": "en_surname_trap"},
+
+    {"nick": "k.u.r.w.a.k.u.r.w.a", "label": 1, "category": "heavy_separator"},
+    {"nick": "k_u_r_w_a_2_0_2_4", "label": 1, "category": "heavy_separator"},
+    {"nick": "c-h-u-j", "label": 1, "category": "heavy_separator"},
+    {"nick": "p i e r d o l", "label": 1, "category": "heavy_separator"},
+
+    {"nick": "Kuba", "label": 0, "category": "name_with_kur_substring"},
+    {"nick": "Kubacki", "label": 0, "category": "name_with_kur_substring"},
+    {"nick": "Kuba_2003", "label": 0, "category": "name_with_kur_substring"},
+    {"nick": "Cipek_Marcin", "label": 0, "category": "rare_pl_surname"},
+
+    {"nick": "kura_domowa", "label": 0, "category": "pl_word_kur_prefix"},
+    {"nick": "kurka_wodna", "label": 0, "category": "pl_word_kur_prefix"},
+    {"nick": "kurczak_z_grilla", "label": 0, "category": "pl_word_kur_prefix"}
+  ]
+}

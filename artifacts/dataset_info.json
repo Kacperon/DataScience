@@ -1,0 +1,14 @@
+{
+  "total": 498053,
+  "train": 398443,
+  "val": 49805,
+  "test": 49805,
+  "vulgar_pct": 0.43781485102991047,
+  "by_source": {
+    "namespotting_clean": 200000,
+    "namespotting_toxic": 122158,
+    "pl_augmented": 95897,
+    "pl_synthetic_clean": 79998
+  },
+  "banlist_size": 11403
+}

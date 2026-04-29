@@ -1,7 +1,20 @@
 .venv/
+venv/
 __pycache__/
 *.pyc
-data/*
-!data/README.md
+*.pyo
 *.egg-info/
 .ipynb_checkpoints/
+
+# Data — keep only README
+data/*
+!data/README.md
+
+# Artifacts — commit trained models, ignore splits & sweep results
+artifacts/sweep/
+artifacts/*.parquet
+
+# IDE / OS
+.vscode/
+.idea/
+.DS_Store
