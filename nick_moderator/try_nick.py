@@ -13,7 +13,7 @@ import sys
 import numpy as np
 import torch
 
-from .config import ARTIFACTS_DIR
+from .config import ARTIFACTS_DIR, NICK_MAX_LEN, NICK_MIN_LEN
 from .models import load_mlp
 
 
@@ -36,6 +36,9 @@ def main() -> int:
             print(file=sys.stderr)
             return 0
         if not nick:
+            continue
+        if not (NICK_MIN_LEN <= len(nick) <= NICK_MAX_LEN):
+            print(f"{nick!r}  skipped (length {len(nick)} outside {NICK_MIN_LEN}..{NICK_MAX_LEN})", flush=True)
             continue
         with torch.no_grad():
             X = vectorizer.transform([nick]).toarray().astype(np.float32)

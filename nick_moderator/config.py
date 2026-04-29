@@ -5,6 +5,7 @@ DATA_DIR = ROOT / "data"
 ARTIFACTS_DIR = ROOT / "artifacts"
 ARTIFACTS_DIR.mkdir(exist_ok=True)
 
+NICK_MIN_LEN = 3
 NICK_MAX_LEN = 32
 
 # Featurization
